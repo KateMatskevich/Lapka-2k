@@ -20,12 +20,13 @@ namespace ConsoleApp1
             string stringType = "text";
             #endregion        
             #region 1b task
-            doubleType = intType;
+            doubleType = intType; // явное приведение
             floatType = charType;
             floatType = intType;
             intType = charType;
 
             intType = (int)doubleType;
+            charType = (char)intType;
             floatType = (float)charType;
             doubleType = (double)floatType;
             stringType = Convert.ToString(floatType);
@@ -34,8 +35,8 @@ namespace ConsoleApp1
             object boxing = intType; // для преобразования значимого типа в ссылочный
             int unboxing = (int)boxing; //распоковка из ссылочного в значимый
             #endregion        
-            #region 1d task
-            var kate = "My name is Kate";
+            #region 1d task 
+            var kate = "My name is Kate"; // неявно типизированная переменная
             // kate = 3; error
             #endregion
             Console.WriteLine("-----------1e task------------");
@@ -105,7 +106,7 @@ namespace ConsoleApp1
             #region 3 task
             #region 3a task
             Console.WriteLine("-------------------3a task----------------");
-            int myInt1 = 5;
+            int myInt1 = 5; // двумерный массив
             int myInt2 = 4;
             int[,] mas = new int[myInt1, myInt2];
             Random rn = new Random();
@@ -131,7 +132,7 @@ namespace ConsoleApp1
             #endregion
             #region 3c task
             Console.WriteLine("------------3c task--------------");
-            int[][] myNewArr = new int[3][] { new int[2], new int[3], new int[4] };
+            int[][] myNewArr = new int[3][] { new int[2], new int[3], new int[4] }; //ступенчатый массив
             for (int i = 0; i < myNewArr.Length; i++)
             {
                 for (int j = 0; j < myNewArr[i].Length; j++)
@@ -146,8 +147,8 @@ namespace ConsoleApp1
             }
             #endregion
             #region 3d task ---
-            Console.WriteLine("--------------3d task------------");
-            var firstArr = new[]
+            Console.WriteLine("--------------3d task------------"); // неявно типизированные переменные для хранения массива и строки. 
+            var firstArr = new[] 
             {
                 new
                 {
@@ -174,7 +175,7 @@ namespace ConsoleApp1
             var yyy = myFirstTuple.Item1;// распаковка кортежа в переменные
             Console.WriteLine(yyy);
             #endregion
-            #region task 4d
+            #region 4d task 
             Console.WriteLine("4d task"); //сравнение двух кортежей
             (int, string, char, string, ulong) mySecondTuple = (2, "", 'h', "kgsr", 68523);
 
